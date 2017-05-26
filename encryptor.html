@@ -1,0 +1,55 @@
+<html>
+<!-- encryptor.html v3.0, by ken ehrman -->
+<script>
+    /*
+    Set the variable key equal to the correct string to get your message.
+    Clue: first name of the men named after that floppy thing you do. all-lowercase works best.
+    */
+    key = "homenet";
+    enc = "";
+    msg = "Happy 30th Birthday Kyle!! Hope you have a happy day.";
+    var arr = [ [],[],[],[],[],[] ];
+    for(i=0, j=0, k=key.length; i<msg.length; i++, j=(j+1<k) ? j+1 : 0){
+        mcode = msg.charCodeAt(i);
+        kcode = key.charCodeAt(j);
+        ecode = (mcode ^ kcode) + 33;
+        echar = String.fromCharCode(ecode);
+        echar = (echar == '"' ? '\\"' : echar);
+        enc += echar
+        arr[0][i] = msg[i];
+        arr[1][i] = key[j];
+        arr[2][i] = echar;
+        arr[3][i] = mcode;
+        arr[4][i] = kcode;
+        arr[5][i] = ecode;
+    }
+    
+</script>
+<pre>
+&lt;html&gt;
+&lt;!-- cryptocard.html v3.1, by ken ehrman --&gt;
+&lt;script&gt;
+/*
+Set the variable key equal to the correct string to get your message.
+Clue: lowercase name of the company where we both worked.
+*/
+key="homenet";
+enc="<script>document.write(enc);</script>";
+for(i=0,j=0,k=key.length;i&lt;enc.length;i++,j=(j+1&lt;k)?j+1:0)document.write(String.fromCharCode(key.charCodeAt(j)^(enc[i]=='\\'?(enc[i++]+enc[i]):enc[i]).charCodeAt(0)-33));
+&lt;/script&gt;
+&lt;/html&gt;
+</pre>
+<script>
+    document.write("<table>");
+    for(i=0; i<msg.length; i++)
+        document.write(
+            "<tr><td>"  + arr[0][i] +
+            "</td><td>" + arr[1][i] + 
+            "</td><td>" + arr[2][i] + 
+            "</td><td>" + arr[3][i] + 
+            "</td><td>" + arr[4][i] + 
+            "</td><td>" + arr[5][i] + "</td></tr>");
+    document.write("</table>");
+
+</script>
+</html>

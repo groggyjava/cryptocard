@@ -1,0 +1,12 @@
+<html>
+<!-- cryptocard.html v3.2, by ken ehrman -->
+<script>
+/*
+Set the variable key equal to the correct string to get your message.
+Clue: lowercase name of the company where we both worked.
+*/
+key="homenet";
+enc="A/>68fhy<&fM-'=(*%8f`2$)epf](@)f8+\"i(-4,f6i(-6?=u-/5l";
+for(i=0,j=0,k=key.length;i<enc.length;i++,j=(j+1<k)?j+1:0)document.write(String.fromCharCode(key.charCodeAt(j)^(enc[i]=='\\'?(enc[++i]):enc[i]).charCodeAt(0)-33));
+</script>
+</html>
